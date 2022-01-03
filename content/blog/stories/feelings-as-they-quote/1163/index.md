@@ -1,7 +1,7 @@
 ---
 title: Feelings as they “Quote”
 date: "2020-08-28T22:12:03.284Z"
-excerpt: "<p>The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time.</p> <p>So many of us are suffering just by doing this step wrong, Raging a war inside and then going on the lookout for a truce. Can the soil give forth fruit without being nourished? I say No.</p>"
+excerpt: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time. So many of us are suffering just by doing this step wrong, Raging a war inside and then going on the lookout for a truce. Can the soil give forth fruit without being nourished? I say No."
 meta_title: Feelings as they “Quote”
 meta_description: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time."
 meta_keywords: "mental health, forced positive thinking, acceptance, positive thinking, dealing with emotions, how to deal with emotions"
