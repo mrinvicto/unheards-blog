@@ -1,7 +1,10 @@
 ---
 title: The stories, the feelings, the pain, the people, We.
 date: "2020-07-31T22:12:03.284Z"
-description: "Hi, I’m Monika, and this is my story of TheUnheards or my story unheard. I remember I had so many stories to tell, so many feelings I could share just so easily, being the centre of every event. I remember how simple felt. But I don’t remember where exactly this all started crossfading into the complicated."
+excerpt: "Hi, I’m Monika, and this is my story of TheUnheards or my story unheard. I remember I had so many stories to tell, so many feelings I could share just so easily, being the centre of every event. I remember how simple felt. But I don’t remember where exactly this all started crossfading into the complicated."
+meta_title: The stories, the feelings, the pain, the people, We.
+meta_description: "This is my story of TheUnheards or my story unheard"
+meta_keywords: "mental health, forced positive thinking, acceptance, positive thinking, dealing with emotions, how to deal with emotions"
 ---
 
 Head spinning at a rate I can’t measure, eyes searching for something I’m yet to decipher and suddenly I’m aware of each breath that goes in, each nerve in my body, suddenly I’m more attuned to my existence, surprised at the no. of outcomes my brain can calculate. A hand on the chest trying to conceal the pain, thoughts gushing down like the blood in those veins…  
@@ -35,5 +38,3 @@ Now I realised why I disconnected so many calls feeling empty with a tear rollin
 > I was Unheard.
 >
 > Monika Singh Chahal
-
-##### Monika SIngh Chahal

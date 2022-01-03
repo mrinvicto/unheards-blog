@@ -1,18 +1,36 @@
+const {
+  SITE_URL,
+  SITE_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_BRIEF_DESCRIPTION,
+  SITE_HOME_META_DESCRIPTION,
+  AUTHOR_TWITTER_HANDLE,
+} = require("./constants")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: SITE_TITLE,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: AUTHOR_NAME,
+      summary: AUTHOR_BRIEF_DESCRIPTION,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: SITE_HOME_META_DESCRIPTION,
+    siteUrl: SITE_URL,
     social: {
-      twitter: `kylemathews`,
+      twitter: AUTHOR_TWITTER_HANDLE,
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-ts`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Handlee`],
+        display: "swap",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,12 +69,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-216076186-1`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
