@@ -53,9 +53,9 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
             const title = post?.frontmatter?.title || post?.fields?.slug
-            console.log({ post })
+
             return (
-              <li style={styles.articleContainer} key={post?.fields?.slug}>
+              <li className="articleContainer" key={post?.fields?.slug}>
                 <article
                   style={styles.postArticle}
                   className="post-list-item"
@@ -101,11 +101,6 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
 }
 
 const styles = {
-  articleContainer: {
-    marginBottom: "50px",
-    background: "#fff",
-    padding: "60px 100px 20px",
-  },
   readMoreBtn: {
     background: "#f5f5f5",
     padding: "15px 20px",

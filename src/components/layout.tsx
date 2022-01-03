@@ -38,11 +38,11 @@ const Layout = ({ location, children }: ILayout) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header style={styles.headerWrapper} className="global-header">
+      <header className="global-header">
         {header}
         {menuItems}
       </header>
-      <main style={isRootPath ? {} : styles.mainWrapper}>{children}</main>
+      <main className={isRootPath ? "" : "mainWrapper"}>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
@@ -55,13 +55,6 @@ const Layout = ({ location, children }: ILayout) => {
 }
 
 const styles = {
-  mainWrapper: {
-    background: "#fff",
-    padding: "60px 100px 20px",
-  },
-  headerWrapper: {
-    display: "flex",
-  },
   headline: {
     flex: 1,
   },
