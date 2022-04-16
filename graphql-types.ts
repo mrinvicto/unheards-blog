@@ -3473,6 +3473,11 @@ export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
 
+export type WhatAreWePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type WhatAreWePageQuery = { site?: { buildTime?: any | null } | null };
+
 export type BlogPostBySlugQueryVariables = Exact<{
   id: Scalars['String'];
   previousPostId?: InputMaybe<Scalars['String']>;

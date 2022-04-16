@@ -13,6 +13,26 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `theunheards`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          // `Mukta\:400,700`,
+          // `Lexend\:400,700`,
+          `Quattrocento+Sans\:400,700`,
+          `Gelasio\:400,700,400i,700i`,
+          // `EB+Garamond\:400,700,400i,700i`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-graphql-codegen`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -60,9 +80,9 @@ module.exports = {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
-              rel: "nofollow noopener noreferrer"
-            }
-          }
+              rel: "nofollow noopener noreferrer",
+            },
+          },
         ],
       },
     },

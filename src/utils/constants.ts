@@ -27,40 +27,13 @@ export const OG_ABOUT_ME_PAGE = "https://ladwhocodes.com/about"
 
 // Category page values
 export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
-  java: {
-    title: "Java",
+  stories: {
+    title: "Stories",
     description:
       "Read latest tutorials involving Java which is one of the mosty popular programming languages. Java is used to make Backend applications, mobile apps, desktop apps, games and much more.",
     keywords:
       "Java programming tutorials, Java coding language, Latest Java updates, coding in java, Java tutorials, How to become better programmer with Java",
     excerpt:
       "Java is one of the most popular programming languages in the world.",
-  },
-  flutter: {
-    title: "Flutter",
-    description:
-      "Read latest tutorials about flutter which in an open source framework developed by Google to make cross platform applications.",
-    keywords:
-      "Flutter performance optimizations, flutter performance, flutter application development tutorials, how to make apps using flutter",
-    excerpt:
-      "Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.",
-  },
-  "react-native": {
-    title: "React Native",
-    description:
-      "Read latest articles about React Native. Learn to create cross platform applications using React Native and how to performance tune the application.",
-    keywords:
-      "React Native application development tutorials, performance optimizations in React Native, React Native performance optimizations, React Native fixes",
-    excerpt:
-      "React Native is a cross platform mobile application development framework designed by Facebook.",
-  },
-  "gatsby": {
-    title: "GatsbyJS",
-    description:
-      "Read latest articles about GatsbyJS. Learn how to make the most out of your GatsbyJS blog/application.",
-    keywords:
-      "GatsbyJS application development tutorials, performance optimizations in GatsbyJS, GatsbyJS performance optimizations, GatsbyJS fixes, GatsbyJS tutorials, Creating blog in GatsbyJS",
-    excerpt:
-      "GatsbyJS is used to make static websites. I am using it to run my blog.",
   },
 }

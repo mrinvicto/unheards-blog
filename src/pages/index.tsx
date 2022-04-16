@@ -19,41 +19,63 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
 
   const getPostsListSection = () => {
     return (
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post?.frontmatter?.title
+      <div className="homePostsSection">
+        <ol style={{ listStyle: `none` }}>
+          {posts.map((post, idx) => {
+            const title = post?.frontmatter?.title
+            const isLastPost = idx === posts.length - 1
 
-          return (
-            <li key={post?.frontmatter?.permalink}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
+            return (
+              <li key={post?.frontmatter?.permalink}>
+                <article
+                  className={`${
+                    isLastPost ? "post-list-item-last" : ""
+                  } post-list-item`}
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2 className={"post-title"}>
+                      <Link
+                        to={post?.frontmatter?.permalink || ""}
+                        itemProp="url"
+                      >
+                        <span itemProp="headline">{title}</span>
+                      </Link>
+                    </h2>
+                    <div className="post-meta">
+                      <span className="post-meta-title">Written by:</span>
+                      <span className="post-meta-value">
+                        Monika Singh Chahal
+                      </span>
+                      <span className="post-meta-title">on</span>
+                      <span className="post-meta-value">
+                        {post?.frontmatter?.date}
+                      </span>
+                    </div>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post?.frontmatter?.excerpt || "",
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                  <div className={`read-more-link`}>
                     <Link
                       to={post?.frontmatter?.permalink || ""}
                       itemProp="url"
                     >
-                      <span itemProp="headline">{title}</span>
+                      <span itemProp="headline">Read More</span>
                     </Link>
-                  </h2>
-                  <small>{post?.frontmatter?.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post?.frontmatter?.excerpt || "",
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+                  </div>
+                </article>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
     )
   }
 

@@ -4,7 +4,19 @@ import { BlogPostBySlugQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
-import { getCategoryPageRoute } from "../utils/helpers"
+import { getCategoryPageRoute, getCompletePageURL } from "../utils/helpers"
+import { Disqus } from "gatsby-plugin-disqus"
+
+const getAllCategoriesLinks = (categories: (string | null)[]) => {
+  return categories.map((category: string | null) => {
+    if (category)
+      return (
+        <Link className="tag-link" to={getCategoryPageRoute(category || "")}>
+          {category}
+        </Link>
+      )
+  })
+}
 
 const BlogPostTemplate = ({
   data,
@@ -33,21 +45,25 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
-          <p>{post?.frontmatter?.date}</p>
+          <h1 className="post-title" itemProp="headline">
+            {post?.frontmatter?.title}
+          </h1>
+          <div className="post-meta">
+            <span className="post-meta-title">Written by:</span>
+            <span className="post-meta-value">Monika Singh Chahal</span>
+            <span className="post-meta-title">on</span>
+            <span className="post-meta-value">{post?.frontmatter?.date}</span>
+            <div className="tags-wrapper">
+              <span className="post-meta-title">Posted Under:</span>
+              {getAllCategoriesLinks(post?.frontmatter?.categories || [])}
+            </div>
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post?.html || "" }}
           itemProp="articleBody"
         />
         <hr />
-        <div>
-          {post?.frontmatter?.categories?.map(category => {
-            return (
-              <Link to={getCategoryPageRoute(category || "")}>{category}</Link>
-            )
-          })}
-        </div>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -75,6 +91,16 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
+      <Disqus
+        config={{
+          /* Replace PAGE_URL with your post's canonical URL variable */
+          url: getCompletePageURL(location.pathname),
+          /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+          identifier: location.pathname,
+          /* Replace PAGE_TITLE with the title of the page */
+          title: post?.frontmatter?.title,
+        }}
+      />
     </Layout>
   )
 }
