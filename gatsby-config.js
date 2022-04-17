@@ -1,36 +1,47 @@
-const {
-  SITE_URL,
-  SITE_TITLE,
-  AUTHOR_NAME,
-  AUTHOR_BRIEF_DESCRIPTION,
-  SITE_HOME_META_DESCRIPTION,
-  AUTHOR_TWITTER_HANDLE,
-} = require("./constants")
-
+const SITE_URL = "https://ladwhocodes.com/"
 module.exports = {
   siteMetadata: {
-    title: SITE_TITLE,
+    title: `Gatsby Starter Blog`,
     author: {
-      name: AUTHOR_NAME,
-      summary: AUTHOR_BRIEF_DESCRIPTION,
+      name: `Kyle Mathews`,
+      summary: `who lives and works in San Francisco building useful things.`,
     },
-    description: SITE_HOME_META_DESCRIPTION,
+    description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: SITE_URL,
     social: {
-      twitter: AUTHOR_TWITTER_HANDLE,
+      twitter: `kylemathews`,
     },
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-ts`,
-    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-disqus`,
       options: {
-        fonts: [`Handlee`],
-        display: "swap",
+        shortname: `theunheards`,
       },
     },
+    {
+      resolve: "@slixites/gatsby-plugin-google-fonts",
+      options: {
+        fonts: [`Lexend\:700`, `Sacramento\:400`, `Gelasio\:400,700,400i,700i`],
+        display: "swap",
+        preconnect: true,
+        attributes: {
+          rel: "stylesheet preload prefetch",
+          as: "style",
+        },
+      },
+    },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-graphql-codegen`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -64,6 +75,13 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow noopener noreferrer",
+            },
+          },
         ],
       },
     },
@@ -72,7 +90,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-216076186-1`,
+        trackingId: `UA-215676827-1`,
       },
     },
     {
@@ -97,8 +115,8 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  url: site.siteMetadata.siteUrl + node.frontmatter.permalink,
+                  guid: site.siteMetadata.siteUrl + node.frontmatter.permalink,
                   custom_elements: [{ "content:encoded": node.html }],
                 })
               })
@@ -117,6 +135,7 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      permalink
                     }
                   }
                 }
@@ -146,5 +165,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }

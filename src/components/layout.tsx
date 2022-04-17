@@ -1,75 +1,30 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { WindowLocation } from "@reach/router"
-import { SITE_TITLE } from "../../constants"
+import { PageProps } from "../models/PageProps"
+import { BLOG_HOME_TITLE } from "../utils/constants"
+import "../theme/theme.scss"
+import Header from "./header"
+import Footer from "./footer"
 
-const Layout = ({ location, children }: ILayout) => {
+const Layout = ({ location, children }: PageProps<any>) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1 style={styles.headline} className="main-heading">
-        <Link to="/">{SITE_TITLE}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h2 style={styles.headline} className="main-heading">
-        <Link to="/">{SITE_TITLE}</Link>
-      </h2>
-    )
-  }
-
-  const menuItems = (
-    <ol style={styles.menuList}>
-      <li style={styles.menuListItem}>
-        <Link to={"/about"}>About Us</Link>
-      </li>
-      <li style={styles.menuListItem}>
-        <Link to={"/what-are-we"}>What are we?</Link>
-      </li>
-      <li style={styles.menuListItem}>
-        <Link to={"/contact"}>Contact</Link>
-      </li>
-    </ol>
-  )
+  const title = BLOG_HOME_TITLE
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">
-        {header}
-        {menuItems}
-      </header>
-      <main className={isRootPath ? "" : "mainWrapper"}>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a rel="nofollow" href="https://www.gatsbyjs.com">
-          Gatsby
-        </a>
-      </footer>
+    <div>
+      <Header isRootPath={isRootPath} title={title} />
+      <div
+        className="container is-max-widescreen"
+        data-is-root-path={isRootPath}
+      >
+        {/* <header className="global-header">{header}</header> */}
+        <div className="columns p-2">
+          <main className="column main-content-area">{children}</main>
+        </div>
+      </div>
+      <Footer />
     </div>
   )
-}
-
-const styles = {
-  headline: {
-    flex: 1,
-  },
-  menuList: {
-    listStyle: "none",
-    display: "flex",
-  },
-  menuListItem: {
-    marginLeft: "20px",
-  },
-}
-
-interface ILayout {
-  location: WindowLocation
-  children?: React.ReactElement
 }
 
 export default Layout

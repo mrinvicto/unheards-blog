@@ -5,23 +5,39 @@ import Seo from "../components/seo"
 import {
   BLOG_DESCRIPTION,
   BLOG_KEYWORDS,
-  HOMEPAGE_TITLE,
+  BLOG_LIST_PAGE_TITLE_PREFIX,
 } from "../utils/constants"
 import { PageProps } from "../models/PageProps"
-import { HomePageBlogPostsQuery } from "../../graphql-types"
+import { BlogPostsByPageNumberQuery } from "../../graphql-types"
 
-const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
-  const posts = data?.allMarkdownRemark?.nodes || []
-
-  const getNoPostsSection = () => {
-    return <p>No blog posts found.</p>
-  }
-
-  const getPostsListSection = () => {
-    return (
+const RecentArticleListTemplate = ({
+  data,
+  location,
+  pageContext,
+}: PageProps<BlogPostsByPageNumberQuery>) => {
+  const posts = data?.allMarkdownRemark.edges || []
+  const { currentPage, numberOfPages } = pageContext || {}
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numberOfPages
+  const prevPage =
+    currentPage - 1 === 1 ? "/" : `/${(currentPage - 1).toString()}`
+  const nextPage = `/${(currentPage + 1).toString()}`
+  return (
+    <Layout location={location}>
+      <Seo
+        location={location}
+        title={`${BLOG_LIST_PAGE_TITLE_PREFIX} - Page ${currentPage}`}
+        meta={{
+          keywords: BLOG_KEYWORDS,
+          description: BLOG_DESCRIPTION,
+          type: "website",
+        }}
+        shouldAppendTitle={true}
+      />
       <div className="homePostsSection">
         <ol style={{ listStyle: `none` }}>
-          {posts.map((post, idx) => {
+          {posts?.map((postEdge, idx) => {
+            const post = postEdge.node
             const title = post?.frontmatter?.title
             const isLastPost = idx === posts.length - 1
 
@@ -75,55 +91,40 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
             )
           })}
         </ol>
+
+        {!isFirst && (
+          <Link to={prevPage} rel="prev">
+            ← Previous Page
+          </Link>
+        )}
+        {!isLast && (
+          <Link to={nextPage} rel="next">
+            Next Page →
+          </Link>
+        )}
       </div>
-    )
-  }
-
-  const getPostsSection = () => {
-    if (posts.length === 0) {
-      return getNoPostsSection()
-    } else {
-      return getPostsListSection()
-    }
-  }
-
-  return (
-    <Layout location={location}>
-      <Seo
-        location={location}
-        title={HOMEPAGE_TITLE}
-        meta={{
-          description: BLOG_DESCRIPTION,
-          title: HOMEPAGE_TITLE,
-          type: "website",
-          keywords: BLOG_KEYWORDS,
-        }}
-      />
-      {getPostsSection()}
     </Layout>
   )
 }
 
-export default BlogIndex
+export default RecentArticleListTemplate
 
 export const pageQuery = graphql`
-  query HomePageBlogPosts {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
+  query BlogPostsByPageNumber($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
           excerpt
-          permalink
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+            permalink
+            excerpt
+          }
         }
       }
     }

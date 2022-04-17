@@ -1,40 +1,39 @@
-// If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
-import { PageProps, graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import { ContactUsPageQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { PageProps } from "../models/PageProps"
 
-type DataProps = {
-  site: {
-    buildTime: string
-  }
-}
-
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({
-  data,
-  path,
-  location,
-}) => (
-  // TODO: Monika
+const ContactUsPage = ({ location }: PageProps<ContactUsPageQuery>) => (
   <Layout location={location}>
     <>
       <Seo
-        title="Contact Us"
+        title="Get in touch with us"
         location={location}
-        og={{ type: "website" }}
-        meta={{ title: "Contact Us", description: "", keywords: "" }}
+        shouldAppendTitle={false}
+        meta={{
+          type: "website",
+          title: "Get in touch with us",
+          description:
+            "We'd love to hear from you. If you have any feedback or query, please feel free to drop an email to us. Also, connect with on all popular Social Media channels.",
+          keywords: "Connect with TheUnheards, Contact TheUnheards",
+        }}
       />
-      <h1>Contact Us</h1>
-      <p>We are still working on the contact us page. Please stay tuned.</p>
+      <div className="blog-page">
+        <header>
+          <h1 className="post-title">Contact Us</h1>
+        </header>
+        <p>We'd love to hear from you. We are still working on this page.</p>
+      </div>
     </>
   </Layout>
 )
 
-export default UsingTypescript
+export default ContactUsPage
 
 export const query = graphql`
-  {
+  query ContactUsPage {
     site {
       buildTime(formatString: "YYYY-MM-DD hh:mm a z")
     }
