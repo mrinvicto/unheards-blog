@@ -12,11 +12,11 @@ const Layout = ({ location, children }: PageProps<any>) => {
 
   return (
     <div>
+      <Header isRootPath={isRootPath} title={title} />
       <div
         className="container is-max-widescreen"
         data-is-root-path={isRootPath}
       >
-        <Header isRootPath={isRootPath} title={title} />
         {/* <header className="global-header">{header}</header> */}
         <div className="columns p-2">
           <main className="column main-content-area">{children}</main>

@@ -40,7 +40,7 @@ const WhatAreWePage = ({ location }: PageProps<ContactUsPageQuery>) => (
           We are guided but not understood Loved but not secured Encouraged but
           not comforted Cared for but not looked after We are someone they
           listen to but not hear. The Unheards.
-          <p>- Monika Singh Chahal</p>
+          <cite>- Monika Singh Chahal</cite>
         </blockquote>
         <p>
           So here’s a small attempt to change it. To share stories of not only

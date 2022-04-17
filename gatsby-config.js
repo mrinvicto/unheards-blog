@@ -22,13 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          // `Mukta\:400,700`,
-          // `Lexend\:400,700`,
-          `Quattrocento+Sans\:400,700`,
-          `Gelasio\:400,700,400i,700i`,
-          // `EB+Garamond\:400,700,400i,700i`, // you can also specify font weights and styles
-        ],
+        fonts: [`Lexend\:700`, `Sacramento\:400`, `Gelasio\:400,700,400i,700i`],
         display: "swap",
       },
     },

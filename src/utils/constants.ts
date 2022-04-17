@@ -2,8 +2,8 @@ import { CatgeoryPageDetails } from "../models/CatgeoryPageDetails"
 
 // Default site properties
 export const SITE_URL = "https://ladwhocodes.com"
-export const BLOG_HOME_TITLE = "LadWhoCodes"
-export const BLOG_TITLE_SUFFIX = "LadWhoCodes"
+export const BLOG_HOME_TITLE = "The Unheards"
+export const BLOG_TITLE_SUFFIX = "The Unheards"
 export const BLOG_DESCRIPTION =
   "LadWhoCodes is Dinesh Verma's personal blog where we writes about better coding practices, how-to guides, tutorials on latest technologies, and much more."
 export const BLOG_KEYWORDS =

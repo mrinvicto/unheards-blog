@@ -41,40 +41,51 @@ const Header = ({ title, isRootPath }: HeaderProps) => {
   }, [])
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <div className={"navbar-item"}>
-          {getHeaderSection(title, isRootPath)}
-        </div>
-        <a
-          role="button"
-          className="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-end main-links">
-          <div className="navbar-item">
-            <Link className="navbar-item" to={"/about"} itemProp="url">
-              About
-            </Link>
-            <Link className="navbar-item" to={"/what-are-we"} itemProp="url">
-              What Are We?
-            </Link>
-            <Link className="navbar-item" to={"/contact"} itemProp="url">
-              Contact
-            </Link>
+    <div className="header-wrapper">
+      <div
+        className="container is-max-widescreen"
+        data-is-root-path={isRootPath}
+      >
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <div className={"navbar-item"}>
+              {getHeaderSection(title, isRootPath)}
+            </div>
+            <a
+              role="button"
+              className="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
           </div>
-        </div>
+
+          <div id="navbarBasicExample" className="navbar-menu">
+            <div className="navbar-end main-links">
+              <div className="navbar-item">
+                <Link className="navbar-item" to={"/about"} itemProp="url">
+                  About
+                </Link>
+                <Link
+                  className="navbar-item"
+                  to={"/what-are-we"}
+                  itemProp="url"
+                >
+                  What Are We?
+                </Link>
+                <Link className="navbar-item" to={"/contact"} itemProp="url">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   )
 }
 

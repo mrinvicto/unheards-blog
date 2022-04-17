@@ -66,6 +66,18 @@ const BlogPostTemplate = ({
         <hr />
       </article>
       <nav className="blog-post-nav">
+        {/* <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>{previous && <span>← Previous</span>}</li>
+          <li>{next && <span>Next →</span>} </li>
+        </ul> */}
         <ul
           style={{
             display: `flex`,
@@ -82,7 +94,7 @@ const BlogPostTemplate = ({
               </Link>
             )}
           </li>
-          <li>
+          <li className="next-blog-post">
             {next && (
               <Link to={next?.frontmatter?.permalink || ""} rel="next">
                 {next?.frontmatter?.title} →
