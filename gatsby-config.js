@@ -1,4 +1,4 @@
-const SITE_URL = "https://ladwhocodes.com/"
+const SITE_URL = "https://theunheards.com/"
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -90,7 +90,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-215676827-1`,
+        trackingId: `UA-216076186-1`,
       },
     },
     {
