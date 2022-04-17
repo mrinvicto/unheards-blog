@@ -9,16 +9,15 @@ const ContactUsPage = ({ location }: PageProps<ContactUsPageQuery>) => (
   <Layout location={location}>
     <>
       <Seo
-        title="Get in touch with Dinesh Verma"
+        title="Get in touch with us"
         location={location}
         shouldAppendTitle={false}
         meta={{
           type: "website",
-          title: "Get in touch with Dinesh Verma",
+          title: "Get in touch with us",
           description:
             "We'd love to hear from you. If you have any feedback or query, please feel free to drop an email to us. Also, connect with on all popular Social Media channels.",
-          keywords:
-            "Connect with Dinesh Verma, contact LadWhoCodes, LadwhoCodes contact Dinesh Verma, contact Dinesh Verma Dream11, contact Dinesh Verma Sliceit, email Dinesh Verma Github, email Dinesh Verma ZS Associates, email Dinesh Verma LadWhoCodes, email Dinesh Verma Slice",
+          keywords: "Connect with TheUnheards, Contact TheUnheards",
         }}
       />
       <div className="blog-page">

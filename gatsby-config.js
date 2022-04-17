@@ -20,10 +20,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
         fonts: [`Lexend\:700`, `Sacramento\:400`, `Gelasio\:400,700,400i,700i`],
         display: "swap",
+        preconnect: true,
+        attributes: {
+          rel: "stylesheet preload prefetch",
+          as: "style",
+        },
       },
     },
     `gatsby-plugin-sass`,

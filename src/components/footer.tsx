@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -20,8 +19,8 @@ const Footer = () => {
         <div className="container is-max-widescreen">
           <div className="columns p-6">
             <div className="column is-two-thirds p-6">
-              <div>The Unheards</div>
-              <div>The Unheards is a blah blha blah ...</div>
+              <div>TheUnheards</div>
+              <div>TheUnheards is a blah blha blah ...</div>
             </div>
             <div className="column p-6">
               <div>Title</div>
