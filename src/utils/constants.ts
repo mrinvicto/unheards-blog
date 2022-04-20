@@ -34,4 +34,21 @@ export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
     excerpt:
       "A well curated list of stories. This is just a small description here and will show up on category page.",
   },
+  "mental-health": {
+    title: "Mental Health",
+    description:
+      "A well curated list of stories. This is just a small description here.",
+    keywords: "TheUnheards stories, TheUnheards stories by Monika Singh Chahal",
+    excerpt:
+      "A well curated list of stories. This is just a small description here and will show up on category page.",
+  },
+  "health": {
+    title: "Health",
+    description:
+      "A well curated list of stories. This is just a small description here.",
+    keywords: "TheUnheards stories, TheUnheards stories by Monika Singh Chahal",
+    excerpt:
+      "A well curated list of stories. This is just a small description here and will show up on category page.",
+  },
+  
 }
