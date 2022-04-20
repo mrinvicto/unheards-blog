@@ -2,7 +2,7 @@
 title: The pretense of me being a ‘difficult child'
 date: "2022-01-06T22:12:03.284Z"
 categories: ["stories"]
-featuredImage: "https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg"
+featuredImage: "/images/difficult_child_image.jpeg"
 excerpt: I remember the first time I spoke to my therapist a little more than a year back, I was very nervous. I knew she was my only hope now.
 permalink: "/stories/a-difficult-child/283/"
 meta_title: The pretense of me being a ‘difficult child'

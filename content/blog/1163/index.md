@@ -2,7 +2,7 @@
 title: Feelings as they “Quote”
 date: "2020-08-28T22:12:03.284Z"
 categories: ["stories"]
-featuredImage: "https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg"
+featuredImage: "/images/Feeling_as_they_quote.jpeg"
 excerpt: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time."
 permalink: "/stories/feelings-as-they-quote/1163/"
 meta_title: Feelings as they “Quote”

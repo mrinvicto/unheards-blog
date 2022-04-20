@@ -347,6 +347,20 @@ h2.header-blog-title {
   font-size: var(--fontSize-2);
   font-family: var(--font-heading);
 }
+
+.main-content-area h3 {
+  font-size: var(--fontSize-4);
+  line-height: var(--lineHeight-relaxed);
+  margin-bottom: 25px;
+}
+
+.main-content-area h4 {
+  font-size: var(--fontSize-3);
+  line-height: var(--lineHeight-relaxed);
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
 .blog-post-nav {
   margin-bottom: 20px;
 }
