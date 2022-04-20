@@ -2,7 +2,8 @@
 title: The stories, the feelings, the pain, the people, We.
 date: "2020-07-31T22:12:03.284Z"
 categories: ["stories"]
-excerpt: "Hi, I’m Monika, and this is my story of TheUnheards or my story unheard. I remember I had so many stories to tell, so many feelings I could share just so easily, being the centre of every event. I remember how simple felt. But I don’t remember where exactly this all started crossfading into the complicated."
+featuredImage: "https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg"
+excerpt: "Hi, I’m Monika, and this is my story of TheUnheards or my story unheard. I remember I had so many stories to tell."
 permalink: "/stories/the-stories-the-feelings-the-pain-the-people-we/1107/"
 meta_title: The stories, the feelings, the pain, the people, We.
 meta_description: "This is my story of TheUnheards or my story unheard"

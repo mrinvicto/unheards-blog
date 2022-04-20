@@ -247,6 +247,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -685,6 +687,7 @@ export type Frontmatter = {
   description?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
+  featuredImage?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
   permalink?: Maybe<Scalars['String']>;
   meta_title?: Maybe<Scalars['String']>;
@@ -831,6 +834,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -1056,6 +1061,7 @@ export type FrontmatterFilterInput = {
   description?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   categories?: InputMaybe<StringQueryOperatorInput>;
+  featuredImage?: InputMaybe<StringQueryOperatorInput>;
   excerpt?: InputMaybe<StringQueryOperatorInput>;
   permalink?: InputMaybe<StringQueryOperatorInput>;
   meta_title?: InputMaybe<StringQueryOperatorInput>;
@@ -1277,6 +1283,7 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___description'
   | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___categories'
+  | 'childrenMarkdownRemark___frontmatter___featuredImage'
   | 'childrenMarkdownRemark___frontmatter___excerpt'
   | 'childrenMarkdownRemark___frontmatter___permalink'
   | 'childrenMarkdownRemark___frontmatter___meta_title'
@@ -1341,6 +1348,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___description'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___categories'
+  | 'childMarkdownRemark___frontmatter___featuredImage'
   | 'childMarkdownRemark___frontmatter___excerpt'
   | 'childMarkdownRemark___frontmatter___permalink'
   | 'childMarkdownRemark___frontmatter___meta_title'
@@ -2041,6 +2049,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author___summary'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___social___twitter'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2176,6 +2186,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -3080,6 +3092,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___description'
   | 'frontmatter___date'
   | 'frontmatter___categories'
+  | 'frontmatter___featuredImage'
   | 'frontmatter___excerpt'
   | 'frontmatter___permalink'
   | 'frontmatter___meta_title'
@@ -3463,7 +3476,7 @@ export type ContactUsPageQuery = { site?: { buildTime?: any | null } | null };
 export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
+export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null, featuredImage?: string | null } | null }> } };
 
 export type WhatAreWePageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3484,7 +3497,7 @@ export type CategoryPageByTypeQueryVariables = Exact<{
 }>;
 
 
-export type CategoryPageByTypeQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
+export type CategoryPageByTypeQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null, featuredImage?: string | null } | null }> } };
 
 export type BlogPostsByPageNumberQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -3492,7 +3505,7 @@ export type BlogPostsByPageNumberQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostsByPageNumberQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null, frontmatter?: { date?: any | null, title?: string | null, permalink?: string | null, excerpt?: string | null } | null } }> } };
+export type BlogPostsByPageNumberQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null, frontmatter?: { date?: any | null, title?: string | null, permalink?: string | null, excerpt?: string | null, featuredImage?: string | null } | null } }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

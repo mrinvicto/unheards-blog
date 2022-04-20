@@ -2,7 +2,8 @@
 title: Feelings as they “Quote”
 date: "2020-08-28T22:12:03.284Z"
 categories: ["stories"]
-excerpt: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time. So many of us are suffering just by doing this step wrong, Raging a war inside and then going on the lookout for a truce. Can the soil give forth fruit without being nourished? I say No."
+featuredImage: "https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg"
+excerpt: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time."
 permalink: "/stories/feelings-as-they-quote/1163/"
 meta_title: Feelings as they “Quote”
 meta_description: "The story talks about how forced positive thinking can work totally bizarre!  Let’s make this a world where all emotions are seen respectfully. Let’s take one healing at a time."
@@ -11,6 +12,8 @@ meta_image: ""
 ---
 
 _**There I was laying down on the dried grass below, the wind passing by oh! So mellow. The Sky making those shapes out of its clouds, nature in my ears far out from the crowds.**_
+
+![Chinese Salty Egg](https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg)
 
 Peace fills your heart with glee, your soul feels at its best. Lighter feels your body, Your mind is at rest. You feel restored. Then why did I lay down with such heaviness, why wasn’t my soul at its best, why wasn’t this peace granted to me? They said I’ll feel relaxed then why were my temples strained? My hands clenched?
 

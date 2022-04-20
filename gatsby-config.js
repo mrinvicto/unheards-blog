@@ -22,7 +22,11 @@ module.exports = {
     {
       resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
-        fonts: [`Lexend\:700`, `Sacramento\:400`, `Gelasio\:400,700,400i,700i`],
+        fonts: [
+          `Cormorant+Garamond\:700`,
+          `Sacramento\:400`,
+          `Gelasio\:400,700,400i,700i`,
+        ],
         display: "swap",
         preconnect: true,
         attributes: {
@@ -166,5 +170,13 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://theunheards.us14.list-manage.com/subscribe/post?u=579ec011376e25b0d0ad868fe&amp;id=d11694e8b4", // string; add your MC list endpoint here; see instructions below
+        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
   ],
 }

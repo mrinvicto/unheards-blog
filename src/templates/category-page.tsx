@@ -45,6 +45,10 @@ const CategoryPageTemplate = ({
                   itemScope
                   itemType="http://schema.org/Article"
                 >
+                  <img
+                    className="featured-image"
+                    src={post?.frontmatter?.featuredImage || ""}
+                  />
                   <header>
                     <h2 className={"post-title"}>
                       <Link
@@ -102,6 +106,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { categories: { eq: $category } } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
         excerpt
@@ -113,6 +118,7 @@ export const pageQuery = graphql`
           title
           excerpt
           permalink
+          featuredImage
         }
       }
     }

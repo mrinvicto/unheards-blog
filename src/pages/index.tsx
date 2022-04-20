@@ -34,6 +34,10 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
                   itemScope
                   itemType="http://schema.org/Article"
                 >
+                  <img
+                    className="featured-image"
+                    src={post?.frontmatter?.featuredImage || ""}
+                  />
                   <header>
                     <h2 className={"post-title"}>
                       <Link
@@ -124,6 +128,7 @@ export const pageQuery = graphql`
           title
           excerpt
           permalink
+          featuredImage
         }
       }
     }

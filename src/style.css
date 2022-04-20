@@ -20,6 +20,7 @@
   --spacing-4: 1rem;
   --spacing-5: 1.25rem;
   --spacing-6: 1.5rem;
+  --neg-spacing-6: -1.5rem;
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   --spacing-12: 3rem;
@@ -27,11 +28,11 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans-secondary: "Sacramento", system-ui, -apple-system,
+  --fontFamily-sans-secondary: "Cormorant Garamond", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-  --fontFamily-sans: "Lexend", system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-sans: "Cormorant Garamond", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Gelasio", "Georgia", Cambria, "Times New Roman", Times,
@@ -58,8 +59,10 @@
   --fontSize-5: 2.274rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-secondary: #81b29a;
-  --color-primary: #e07a5f;
+  --color-secondary: #2a9d8f;
+  --color-primary: #264653;
+  --color-ternary: #e9c46a;
+  --color-nav: #fff
   --color-text: #111;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -275,13 +278,22 @@ h2.header-blog-title {
 
 .post-list-item {
   margin-bottom: var(--spacing-12) !important;
-  padding-bottom: var(--spacing-12) !important;
+  /* padding-bottom: var(--spacing-12) !important; */
+  padding: var(--spacing-6) !important;
   border-bottom: 1px dashed var(--color-text);
+  border: 1px solid #ddd;
 }
 
-.post-list-item-last {
-  border-bottom: 0;
+.featured-image {
+  margin: var(--neg-spacing-6) var(--neg-spacing-6) 0 var(--neg-spacing-6) !important;
+  width: calc((var(--spacing-6) * 2) + 100%) !important;
+  max-width: calc((var(--spacing-6) * 2) + 100%) !important;
+  border-bottom: 1px solid #ddd;
 }
+
+/* .post-list-item-last {
+  border-bottom: 0;
+} */
 
 .post-list-item header p {
   font-size: var(--fontSize-2);
@@ -300,6 +312,7 @@ h2.header-blog-title {
 }
 
 .post-list-item header {
+  margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
 }
 
@@ -410,7 +423,11 @@ h2.header-blog-title {
 }
 
 .post-title a:hover {
-  color: #ddd;
+  color: var(--color-secondary) !important;
+}
+
+.read-more-link:hover {
+  background-color: var(--color-secondary);
 }
 
 .blog-post > header {
@@ -439,6 +456,7 @@ h2.post-title {
 .navbar-item {
   font-family: var(--fontFamily-sans);
   color: var(--color-text) !important;
+  font-size: var(--fontSize-2) !important;
 }
 
 .main-links {
@@ -446,7 +464,7 @@ h2.post-title {
 }
 
 .subscribe-footer {
-  background: #ddd;
+  background: var(--color-ternary);
 }
 
 .links-footer {
@@ -470,7 +488,7 @@ h2.post-title {
 
 .read-more-link {
   padding: 5px 0;
-  background: #ddd;
+  background: var(--color-ternary);
   width: 120px;
   text-align: center;
   font-family: var(--fontFamily-serif);
@@ -498,9 +516,9 @@ blockquote {
   line-height: var(--lineHeight-relaxed);
   margin-bottom: 25px !important;
   font-style: italic;
-  color: #ddd;
+  color: var(--color-ternary);
   /* padding: 0 10% !important; */
-  border-left: 5px solid #ddd;
+  border-left: 5px solid var(--color-ternary);
   padding-left: 20px !important;
 }
 
@@ -513,11 +531,11 @@ blockquote > cite {
 } */
 
 .header-wrapper {
-  background-color: var(--color-secondary);
+  background-color: var(--color-nav);
 }
 
 .navbar {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--color-nav) !important;
   /* height: 7rem; */
 }
 
@@ -528,6 +546,36 @@ blockquote > cite {
   }
 
   html {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
+}
+
+#mail-chimp-form {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+#mail-chimp-form > #email_id {
+  height: 40px;
+  flex: 1;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  outline: 0;
+  font-family: var(--fontFamily-serif);
+  padding: 0 10px;
+  font-weight: normal;
+}
+
+#mail-chimp-form > #mail-chimp-submit {
+  height: 40px;
+  margin-left: 10px;
+  flex: 0;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--fontFamily-sans);
+  font-weight: normal;
+  text-transform: uppercase;
 }

@@ -2,7 +2,8 @@
 title: The pretense of me being a ‘difficult child'
 date: "2022-01-06T22:12:03.284Z"
 categories: ["stories"]
-excerpt: I remember the first time I spoke to my therapist a little more than a year back, I was very nervous. I knew she was my only hope now. The session went well but the end of it she asked me why I wasn’t breathing. And I started crying. This story is an honest and unfiltered struggle of a teacher with mental health. We usually tend to pressume that teachers have it all sorted out, they have to be the perfect ones, should know everything, but here it is, a heartfelt story pen downed by someone we fail to recognize as normal living humans! They feel, they mess up, they don't always want to show up! But, they are always there!
+featuredImage: "https://i.postimg.cc/W4XrpXR9/yannick-pulver-hop-X-jp-Vt-RM-unsplash-1-1.jpg"
+excerpt: I remember the first time I spoke to my therapist a little more than a year back, I was very nervous. I knew she was my only hope now.
 permalink: "/stories/a-difficult-child/283/"
 meta_title: The pretense of me being a ‘difficult child'
 meta_description: "This story is an honest and unfiltered struggle of a teacher with mental health. It is, a heartfelt story pen downed by someone we fail to recognize as normal living humans. They feel, they mess up, they don't always want to show up! But, they are always there!"

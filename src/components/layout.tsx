@@ -18,7 +18,7 @@ const Layout = ({ location, children }: PageProps<any>) => {
         data-is-root-path={isRootPath}
       >
         {/* <header className="global-header">{header}</header> */}
-        <div className="columns p-2">
+        <div className="p-2">
           <main className="column main-content-area">{children}</main>
         </div>
       </div>
