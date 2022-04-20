@@ -65,6 +65,6 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "compile": "tsc",
-    "publish:article": "git add . && git commit -m 'new article' && ggpush"
+    "publish:article": "git add . && git commit -m 'new article' && git push origin main"
   }
 }
