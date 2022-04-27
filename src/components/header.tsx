@@ -10,9 +10,11 @@ const getHeaderSection = (title: string, isRootPath: boolean) => {
   if (isRootPath) return <h1 className="header-blog-title">{title}</h1>
   else
     return (
-      <Link to="/">
-        <h2 className="header-blog-title">{title}</h2>
-      </Link>
+      <>
+        <Link to="/">
+          <h2 className="header-blog-title">{title}</h2>
+        </Link>
+      </>
     )
 }
 
