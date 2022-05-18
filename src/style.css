@@ -28,14 +28,15 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans-secondary: "Cormorant Garamond", system-ui, -apple-system,
+  /* --fontFamily-sans-secondary: "Open Sans", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji"; */
+  --fontFamily-sans: "Playfair Display", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-  --fontFamily-sans: "Cormorant Garamond", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Gelasio", "Georgia", Cambria, "Times New Roman", Times,
+  --fontFamily-serif: "Alegreya", "Georgia", Cambria, "Times New Roman", Times,
     serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
@@ -53,16 +54,18 @@
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
+  --fontSize-2: 1.3rem;
   --fontSize-3: 1.44rem;
   --fontSize-4: 1.728rem;
   --fontSize-5: 2.274rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+  --color-alternate-darker: #496b6e10;
+  --color-alternate: #aaaaaa10;
   --color-secondary: #2a9d8f;
   --color-primary: #264653;
-  --color-ternary: #e9c46a;
-  --color-nav: #fff
+  --color-ternary: #507172;
+  --color-nav: #fff;
   --color-text: #111;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -252,7 +255,7 @@ a:focus {
 h1.header-blog-title,
 h2.header-blog-title {
   font-size: var(--fontSize-5);
-  font-family: var(--fontFamily-sans-secondary);
+  font-family: var(--fontFamily-sans);
   color: var(--color-text) !important;
   font-weight: bold;
 }
@@ -458,19 +461,19 @@ h2.header-blog-title {
 h1.post-title {
   font-size: var(--fontSize-6) !important;
   font-weight: bold;
-  line-height: var(--lineHeight-tight);
+  line-height: var(--lineHeight-normal);
 }
 
 h2.post-title {
   font-size: var(--fontSize-5) !important;
   font-weight: bold;
-  line-height: var(--lineHeight-tight);
+  line-height: var(--lineHeight-normal);
 }
 
 .navbar-item {
   font-family: var(--fontFamily-sans);
   color: var(--color-text) !important;
-  font-size: var(--fontSize-2) !important;
+  font-size: var(--fontSize-1) !important;
 }
 
 .main-links {
@@ -482,8 +485,10 @@ h2.post-title {
 }
 
 .links-footer {
-  background: var(--color-text);
+  border-top: 1px solid var(--color-alternate-darker);
+  background: var(--color-alternate);
   color: var(--color-text-light);
+  /* height: 50px; */
 }
 
 .subscribe-text {
@@ -508,6 +513,10 @@ h2.post-title {
   font-family: var(--fontFamily-serif);
   font-style: italic;
   font-size: var(--fontSize-2);
+}
+
+.read-more-link a {
+  color: var(--color-nav) !important;
 }
 
 .category-meta {
@@ -579,6 +588,7 @@ blockquote > cite {
   font-family: var(--fontFamily-serif);
   padding: 0 10px;
   font-weight: normal;
+  font-size: var(--fontSize-2);
 }
 
 #mail-chimp-form > #mail-chimp-submit {
@@ -589,7 +599,32 @@ blockquote > cite {
   border: 1px solid var(--color-primary);
   background: var(--color-secondary);
   color: var(--color-primary);
-  font-family: var(--fontFamily-sans);
+  font-size: var(--fontSize-2);
+  font-family: var(--fontFamily-serif);
   font-weight: normal;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+}
+
+.footer-container {
+  padding: 60px 0;
+  text-align: center;
+  font-family: var(--fontFamily-serif);
+  font-size: var(--fontSize-2);
+}
+
+.footer-links-wrapper {
+  margin-bottom: 20px;
+}
+
+.footer-copyright a {
+  color: var(--color-ternary) !important;
+}
+
+.footer-links-wrapper a {
+  margin-right: 20px;
+  color: var(--color-ternary) !important;
+}
+
+.footer-links-wrapper a:last-child {
+  margin-right: 0;
 }

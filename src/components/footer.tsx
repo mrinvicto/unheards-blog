@@ -1,18 +1,18 @@
 import * as React from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import { Link } from "gatsby"
 
 const Footer = () => {
+  const [done, setDone] = React.useState(false)
+
   const _handleSubmit = async (e: any) => {
     e.preventDefault()
     const emailId = e.target[0].value
-    // const firstName = e.target[1].value
-    // const lastName = e.target[2].value
     const result = await addToMailchimp(emailId, {
       PATHNAME: window.location,
-      // FNAME: firstName,
-      // LNAME: lastName,
     })
-    console.log({ result })
+
+    setDone(true)
   }
 
   return (
@@ -22,12 +22,17 @@ const Footer = () => {
           <div className="p-6">
             <div className="column is-half is-offset-one-quarter">
               <p className="subscribe-text">
-                Subscribe to our weekly newsletter.
+                {done
+                  ? "Thank you for subscribing to our newsletters."
+                  : "Subscribe to our weekly newsletters."}
               </p>
               <form id="mail-chimp-form" onSubmit={_handleSubmit}>
-                <input id="email_id" type={"text"} />
-                {/* <input id={"first_name"} type={"text"} />
-                <input id={"last_name"} type={"text"} /> */}
+                <input
+                  id="email_id"
+                  placeholder="Enter your email address"
+                  type={"email"}
+                  required
+                />
                 <input
                   id="mail-chimp-submit"
                   type={"submit"}
@@ -39,19 +44,18 @@ const Footer = () => {
         </div>
       </div>
       <div className="links-footer">
-        <div className="container is-max-widescreen">
-          <div className="column p-6">
-            <div className="column is-two-thirds p-6">
-              <div>TheUnheards</div>
-              <div>TheUnheards is a blah blha blah ...</div>
-            </div>
-            <div className="column p-6">
-              <div>Title</div>
-              <ol>
-                <li>Something</li>
-                <li>Something Else</li>
-              </ol>
-            </div>
+        <div className="container is-max-widescreen footer-container">
+          <div className="footer-links-wrapper">
+            <Link to={"/"}>Home</Link>
+            <Link to={"/about"}>About</Link>
+            <Link to={"/what-are-we"}>What Are We?</Link>
+            <Link to={"/contact"}>Contact</Link>
+          </div>
+          <div className="footer-copyright">
+            © 2018 - 2022, Built with{" "}
+            <a href="https://www.gatsbyjs.com/" target={"_blank"}>
+              Gatsby
+            </a>
           </div>
         </div>
       </div>

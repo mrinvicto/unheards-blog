@@ -23,9 +23,9 @@ module.exports = {
       resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
         fonts: [
-          `Cormorant+Garamond\:700`,
-          `Sacramento\:400`,
-          `Gelasio\:400,700,400i,700i`,
+          `Playfair+Display\:700`,
+          // `Open+Sans\:400`,
+          `Alegreya\:400,700,400i,700i`,
         ],
         display: "swap",
         preconnect: true,
