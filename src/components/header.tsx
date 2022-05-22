@@ -79,9 +79,9 @@ const Header = ({ title, isRootPath }: HeaderProps) => {
                 >
                   What Are We?
                 </Link>
-                <Link className="navbar-item" to={"/contact"} itemProp="url">
+                {/* <Link className="navbar-item" to={"/contact"} itemProp="url">
                   Contact
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

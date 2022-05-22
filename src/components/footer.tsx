@@ -49,7 +49,7 @@ const Footer = () => {
             <Link to={"/"}>Home</Link>
             <Link to={"/about"}>About</Link>
             <Link to={"/what-are-we"}>What Are We?</Link>
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/sitemap"}>Sitemap</Link>
           </div>
           <div className="footer-copyright">
             © 2018 - 2022, Built with{" "}
