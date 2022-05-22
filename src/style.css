@@ -571,6 +571,10 @@ blockquote > cite {
   html {
     font-size: 14px !important;
   }
+
+  .about-me-image {
+    width: 100% !important;
+  }
 }
 
 #mail-chimp-form {
@@ -627,4 +631,12 @@ blockquote > cite {
 
 .footer-links-wrapper a:last-child {
   margin-right: 0;
+}
+
+.about-me-image {
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
