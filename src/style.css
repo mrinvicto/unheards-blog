@@ -402,6 +402,10 @@ h2.header-blog-title {
   width: 100%;
 }
 
+.main-content-area {
+  margin: 0 auto;
+}
+
 .main-content-area p {
   line-height: var(--lineHeight-relaxed);
   margin-bottom: 25px;

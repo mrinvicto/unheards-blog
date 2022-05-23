@@ -19,7 +19,7 @@ const Layout = ({ location, children }: PageProps<any>) => {
       >
         {/* <header className="global-header">{header}</header> */}
         <div className="p-2">
-          <main className="column main-content-area">{children}</main>
+          <main className="column main-content-area is-10">{children}</main>
         </div>
       </div>
       <Footer />
