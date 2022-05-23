@@ -21,4 +21,4 @@ I stayed in the bottomless pit for 3 years. I’d find myself crying in the bath
 
 _You are going to breathe._
 
-By Neha Bhagania
+This is the story of Neha B.

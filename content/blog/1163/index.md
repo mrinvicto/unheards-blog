@@ -57,5 +57,3 @@ Now when I say accepting and acknowledging I don’t mean to let them be, I mean
 Let’s make this a world where all emotions are seen respectfully.
 
 **_Let’s take one healing at a time._**
-
-##### Monika Singh Chahal
